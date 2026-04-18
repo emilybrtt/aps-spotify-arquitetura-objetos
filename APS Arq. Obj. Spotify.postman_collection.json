@@ -1,0 +1,2768 @@
+{
+  "info": {
+    "_postman_id": "01fdbcb4-0571-4362-802a-36b327236ff3",
+    "name": "APS Arq. Obj. Spotify",
+    "description": "Execute as pastas em ordem: 01→02→03→04→05→06→07→08→09→10.\n\nIDs esperados após criação:\n  Artistas: Radiohead=1, Linkin Park=2, Chappell Roan=3, ABBA=4\n  Álbuns: OK Computer=1, Kid A=2, From Zero=3, Midwest Princess=4, Gold=5, Meteora=6\n  Músicas: Paranoid Android=1, Karma Police=2, Everything=3, Emptiness Machine=4, Heavy=5, Good Luck Babe=6, Pink Pony=7, Dancing Queen=8, Mamma Mia=9, Numb=10\n  Usuários: Emily=1, Giovanni=2, Gabriel=3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49545895",
+    "_collection_link": "https://go.postman.co/collection/49545895-01fdbcb4-0571-4362-802a-36b327236ff3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - Artistas",
+      "item": [
+        {
+          "name": "POST Radiohead",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Radiohead\",\n  \"generoMusical\": \"Rock Alternativo\",\n  \"paisOrigem\": \"Reino Unido\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/artistas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Linkin Park",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Linkin Park\",\n  \"generoMusical\": \"Rock\",\n  \"paisOrigem\": \"Estados Unidos\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/artistas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Chappell Roan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Chappell Roan\",\n  \"generoMusical\": \"Pop\",\n  \"paisOrigem\": \"Estados Unidos\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/artistas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST ABBA",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"ABBA\",\n  \"generoMusical\": \"Pop\",\n  \"paisOrigem\": \"Suécia\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/artistas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Listar Artistas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/artistas?page=0&size=10&sort=nome,asc",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "nome,asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Artista por ID (Radiohead=1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/artistas/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Buscar por Nome (?nome=Linkin)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/artistas/buscar?nome=Linkin&page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas",
+                "buscar"
+              ],
+              "query": [
+                {
+                  "key": "nome",
+                  "value": "Linkin"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Atualizar Radiohead (genero → Art Rock)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Radiohead\",\n  \"generoMusical\": \"Art Rock\",\n  \"paisOrigem\": \"Reino Unido\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/artistas/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "02 - Álbuns",
+      "item": [
+        {
+          "name": "POST OK Computer (artistaId=1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"OK Computer\",\n  \"dataLancamento\": \"1997-06-16\",\n  \"artistaId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/albuns",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Kid A (artistaId=1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Kid A\",\n  \"dataLancamento\": \"2000-10-02\",\n  \"artistaId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/albuns",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST From Zero (artistaId=2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"From Zero\",\n  \"dataLancamento\": \"2024-11-15\",\n  \"artistaId\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/albuns",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST The Rise and Fall of a Midwest Princess (artistaId=3)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"The Rise and Fall of a Midwest Princess\",\n  \"dataLancamento\": \"2023-09-22\",\n  \"artistaId\": 3\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/albuns",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Gold: Greatest Hits (artistaId=4)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Gold: Greatest Hits\",\n  \"dataLancamento\": \"1992-09-21\",\n  \"artistaId\": 4\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/albuns",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Meteora (artistaId=2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Meteora\",\n  \"dataLancamento\": \"2003-03-25\",\n  \"artistaId\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/albuns",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Listar Álbuns",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/albuns?page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Álbum por ID (From Zero=3)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/albuns/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Atualizar From Zero (titulo → Deluxe Edition)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"From Zero (Deluxe Edition)\",\n  \"dataLancamento\": \"2024-11-15\",\n  \"artistaId\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/albuns/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03 - Músicas (10 no total)",
+      "item": [
+        {
+          "name": "POST Paranoid Android — OK Computer [faixa 2]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Paranoid Android\",\n  \"duracaoSegundos\": 387,\n  \"numeroFaixa\": 2,\n  \"artistaId\": 1,\n  \"albumId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Karma Police — OK Computer [faixa 8]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Karma Police\",\n  \"duracaoSegundos\": 261,\n  \"numeroFaixa\": 8,\n  \"artistaId\": 1,\n  \"albumId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Everything in Its Right Place — Kid A [faixa 1]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Everything in Its Right Place\",\n  \"duracaoSegundos\": 251,\n  \"numeroFaixa\": 1,\n  \"artistaId\": 1,\n  \"albumId\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST The Emptiness Machine — From Zero [faixa 1]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"The Emptiness Machine\",\n  \"duracaoSegundos\": 198,\n  \"numeroFaixa\": 1,\n  \"artistaId\": 2,\n  \"albumId\": 3\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Heavy — From Zero [faixa 2]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Heavy\",\n  \"duracaoSegundos\": 212,\n  \"numeroFaixa\": 2,\n  \"artistaId\": 2,\n  \"albumId\": 3\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Good Luck, Babe! — Midwest Princess [faixa 14]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Good Luck, Babe!\",\n  \"duracaoSegundos\": 218,\n  \"numeroFaixa\": 14,\n  \"artistaId\": 3,\n  \"albumId\": 4\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Pink Pony Club — Midwest Princess [faixa 4]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Pink Pony Club\",\n  \"duracaoSegundos\": 279,\n  \"numeroFaixa\": 4,\n  \"artistaId\": 3,\n  \"albumId\": 4\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Dancing Queen — Gold [faixa 1]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Dancing Queen\",\n  \"duracaoSegundos\": 231,\n  \"numeroFaixa\": 1,\n  \"artistaId\": 4,\n  \"albumId\": 5\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Mamma Mia — Gold [faixa 2]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Mamma Mia\",\n  \"duracaoSegundos\": 213,\n  \"numeroFaixa\": 2,\n  \"artistaId\": 4,\n  \"albumId\": 5\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Numb — Meteora [faixa 9]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Numb\",\n  \"duracaoSegundos\": 185,\n  \"numeroFaixa\": 9,\n  \"artistaId\": 2,\n  \"albumId\": 6\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Listar Músicas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/musicas?page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Músicas por Artista (?artistaId=2 — Linkin Park)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/musicas?artistaId=2&page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ],
+              "query": [
+                {
+                  "key": "artistaId",
+                  "value": "2"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Músicas por Álbum (?albumId=3 — From Zero)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/musicas?albumId=3&page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ],
+              "query": [
+                {
+                  "key": "albumId",
+                  "value": "3"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Músicas por Título (?titulo=Numb)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/musicas?titulo=Numb&page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ],
+              "query": [
+                {
+                  "key": "titulo",
+                  "value": "Numb"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Música por ID (Dancing Queen=8)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/musicas/8",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Atualizar Paranoid Android",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Paranoid Android\",\n  \"duracaoSegundos\": 387,\n  \"numeroFaixa\": 2,\n  \"artistaId\": 1,\n  \"albumId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04 - Usuários",
+      "item": [
+        {
+          "name": "POST Emily Britto (PREMIUM)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Emily Britto\",\n  \"email\": \"emily.britto@email.com\",\n  \"tipoPlano\": \"PREMIUM\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/usuarios",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Giovanni Vilela (FREE)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Giovanni Vilela\",\n  \"email\": \"giovanni.vilela@email.com\",\n  \"tipoPlano\": \"FREE\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/usuarios",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Gabriel Aguiar (PREMIUM)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Gabriel Aguiar\",\n  \"email\": \"gabriel.aguiar@email.com\",\n  \"tipoPlano\": \"PREMIUM\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/usuarios",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Listar Usuários",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/usuarios?page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Usuários por Nome (?nome=Emily)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/usuarios?nome=Emily&page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios"
+              ],
+              "query": [
+                {
+                  "key": "nome",
+                  "value": "Emily"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Usuário por ID (Giovanni=2)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/usuarios/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Atualizar Giovanni (FREE → PREMIUM)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Giovanni Vilela\",\n  \"email\": \"giovanni.vilela@email.com\",\n  \"tipoPlano\": \"PREMIUM\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/usuarios/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "05 - Playlists",
+      "item": [
+        {
+          "name": "POST Favoritas da Emily (publica, usuarioId=1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Favoritas da Emily\",\n  \"publica\": true,\n  \"usuarioId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/playlists",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Rock dos Anos 90 (privada, usuarioId=2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Rock dos Anos 90\",\n  \"publica\": false,\n  \"usuarioId\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/playlists",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Indie Vibes (publica, usuarioId=3)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Indie Vibes\",\n  \"publica\": true,\n  \"usuarioId\": 3\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/playlists",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Listar Todas as Playlists",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/playlists?page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Playlists Públicas (?publica=true)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/playlists?publica=true&page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists"
+              ],
+              "query": [
+                {
+                  "key": "publica",
+                  "value": "true"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Playlists por Usuário (?usuarioId=1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/playlists?usuarioId=1&page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists"
+              ],
+              "query": [
+                {
+                  "key": "usuarioId",
+                  "value": "1"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Playlists por Nome (?nome=Rock)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/playlists?nome=Rock&page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists"
+              ],
+              "query": [
+                {
+                  "key": "nome",
+                  "value": "Rock"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Playlist por ID (=1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/playlists/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Adicionar Paranoid Android à Playlist da Emily (X-USER-ID=1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/playlists/1/musicas/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists",
+                "1",
+                "musicas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Adicionar Good Luck, Babe! à Playlist da Emily (X-USER-ID=1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/playlists/1/musicas/6",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists",
+                "1",
+                "musicas",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Adicionar Karma Police à Rock dos Anos 90 (X-USER-ID=2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/playlists/2/musicas/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists",
+                "2",
+                "musicas",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Adicionar Numb à Rock dos Anos 90 (X-USER-ID=2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/playlists/2/musicas/10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists",
+                "2",
+                "musicas",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Adicionar Dancing Queen à Indie Vibes (X-USER-ID=3)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "3"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/playlists/3/musicas/8",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists",
+                "3",
+                "musicas",
+                "8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Renomear Playlist da Emily",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Favoritas da Emily - Atualizada\",\n  \"publica\": true,\n  \"usuarioId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/playlists/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "06 - Avaliações",
+      "item": [
+        {
+          "name": "POST Emily avalia Paranoid Android (nota=5)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comentario\": \"Obra-prima do rock alternativo, simplesmente perfeita.\",\n  \"nota\": 5,\n  \"usuarioId\": 1,\n  \"musicaId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/avaliacoes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Giovanni avalia The Emptiness Machine (nota=4)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comentario\": \"Ótima volta do Linkin Park, soa nostálgico e moderno ao mesmo tempo.\",\n  \"nota\": 4,\n  \"usuarioId\": 2,\n  \"musicaId\": 4\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/avaliacoes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Gabriel avalia Dancing Queen (nota=5)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comentario\": \"Clássico eterno, impossível não dançar.\",\n  \"nota\": 5,\n  \"usuarioId\": 3,\n  \"musicaId\": 8\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/avaliacoes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Giovanni avalia Good Luck, Babe! (nota=4, sem comentário)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nota\": 4,\n  \"usuarioId\": 2,\n  \"musicaId\": 6\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/avaliacoes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Emily avalia Numb (nota=5)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comentario\": \"Clássico que nunca envelhece.\",\n  \"nota\": 5,\n  \"usuarioId\": 1,\n  \"musicaId\": 10\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/avaliacoes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Listar Avaliações",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/avaliacoes?page=0&size=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Avaliação por ID (=1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/avaliacoes/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Atualizar Avaliação da Emily (comentário)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comentario\": \"A melhor música do Radiohead, e talvez de toda a história do rock.\",\n  \"nota\": 5,\n  \"usuarioId\": 1,\n  \"musicaId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/avaliacoes/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "07 - Reproduções (executar em ordem → popula o ranking)",
+      "item": [
+        {
+          "name": "▶ Dancing Queen [1/6] user=Emily(1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/8/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "8",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Dancing Queen [2/6] user=Giovanni(2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/8/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "8",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Dancing Queen [3/6] user=Gabriel(3)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "3"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/8/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "8",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Dancing Queen [4/6] user=Emily(1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/8/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "8",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Dancing Queen [5/6] user=Giovanni(2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/8/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "8",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Dancing Queen [6/6] user=Gabriel(3)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "3"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/8/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "8",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Good Luck, Babe! [1/5] user=Emily(1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/6/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "6",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Good Luck, Babe! [2/5] user=Giovanni(2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/6/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "6",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Good Luck, Babe! [3/5] user=Gabriel(3)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "3"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/6/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "6",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Good Luck, Babe! [4/5] user=Emily(1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/6/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "6",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Good Luck, Babe! [5/5] user=Giovanni(2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/6/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "6",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Paranoid Android [1/4] user=Emily(1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/1/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "1",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Paranoid Android [2/4] user=Giovanni(2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/1/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "1",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Paranoid Android [3/4] user=Gabriel(3)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "3"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/1/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "1",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Paranoid Android [4/4] user=Emily(1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/1/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "1",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Numb [1/3] user=Giovanni(2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/10/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "10",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Numb [2/3] user=Gabriel(3)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "3"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/10/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "10",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Numb [3/3] user=Emily(1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/10/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "10",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ The Emptiness Machine [1/2] user=Emily(1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/4/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "4",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ The Emptiness Machine [2/2] user=Giovanni(2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/4/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "4",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Karma Police [1/1] user=Gabriel(3)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "3"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/2/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "2",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Everything in Its Right Place [1/1] user=Emily(1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/3/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "3",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Pink Pony Club [1/1] user=Giovanni(2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/7/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "7",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Heavy [1/1] user=Gabriel(3)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "3"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/5/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "5",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "▶ Mamma Mia [1/1] user=Emily(1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/9/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "9",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Ranking esperado no relatório após todas as reproduções:\n  1º Dancing Queen — 6 plays\n  2º Good Luck, Babe! — 5 plays\n  3º Paranoid Android — 4 plays\n  4º Numb — 3 plays\n  5º The Emptiness Machine — 2 plays\n  6º a 10º: Karma Police, Everything, Pink Pony Club, Heavy, Mamma Mia — 1 play cada"
+    },
+    {
+      "name": "08 - Relatórios",
+      "item": [
+        {
+          "name": "GET Top Músicas — /relatorios/top-musicas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/relatorios/top-musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "relatorios",
+                "top-musicas"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "09 - Error Handling",
+      "item": [
+        {
+          "name": "[SETUP] POST Usuário Temporário — Lucas Teste",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Lucas Teste\",\n  \"email\": \"lucas.teste@email.com\",\n  \"tipoPlano\": \"FREE\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/usuarios",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[SETUP] DELETE Usuário Temporário (id=4)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/usuarios/4",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 403 — Playlist para Usuário Inativo (usuarioId=4)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Playlist do Lucas\",\n  \"publica\": false,\n  \"usuarioId\": 4\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/playlists",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 403 — Reproduzir com Usuário Inativo (X-USER-ID=4)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "4"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/musicas/1/reproduzir",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "1",
+                "reproduzir"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 403 — Adicionar Música em Playlist Alheia (Giovanni tenta editar playlist da Emily)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER-ID",
+                "value": "2"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/playlists/1/musicas/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists",
+                "1",
+                "musicas",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 409 — Criar Artista Duplicado (Radiohead já existe)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Radiohead\",\n  \"generoMusical\": \"Rock Alternativo\",\n  \"paisOrigem\": \"Reino Unido\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/artistas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 409 — Criar Usuário com Email Duplicado (emily já cadastrada)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Emily Britto Duplicada\",\n  \"email\": \"emily.britto@email.com\",\n  \"tipoPlano\": \"FREE\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/usuarios",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 404 — Buscar Artista Inexistente (id=999)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/artistas/999",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas",
+                "999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 404 — Buscar Música Inexistente (id=999)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/musicas/999",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 404 — Buscar Álbum Inexistente (id=999)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/albuns/999",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns",
+                "999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 400 — Avaliação com nota=6 (acima do máximo)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comentario\": \"Nota inválida\",\n  \"nota\": 6,\n  \"usuarioId\": 1,\n  \"musicaId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/avaliacoes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 400 — Avaliação com nota=0 (abaixo do mínimo)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comentario\": \"Nota inválida\",\n  \"nota\": 0,\n  \"usuarioId\": 1,\n  \"musicaId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/avaliacoes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 400 — Criar Artista sem nome (campo obrigatório)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"generoMusical\": \"Pop\",\n  \"paisOrigem\": \"Brasil\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/artistas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 400 — Criar Música sem artistaId (campo obrigatório)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Música Sem Artista\",\n  \"duracaoSegundos\": 200,\n  \"albumId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/musicas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "✗ 400 — Criar Usuário com email inválido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Usuário Teste\",\n  \"email\": \"email-sem-arroba\",\n  \"tipoPlano\": \"FREE\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/usuarios",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Siga a ordem. O usuário temporário (Lucas Teste) é criado e deletado aqui mesmo — a playlist tentada em seguida deve retornar 403.\n\nStatus esperados:\n  403 → OperacaoNaoPermitidaException (usuário inativo, dono errado)\n  404 → RecursoNaoEncontradoException (id inexistente)\n  409 → RecursoJaExisteException (duplicado)\n  400 → DadosInvalidosException / Bean Validation"
+    },
+    {
+      "name": "10 - Limpeza (DELETE — executar por último)",
+      "item": [
+        {
+          "name": "DELETE Avaliação (id=5)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/avaliacoes/5",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "avaliacoes",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Playlist Indie Vibes (id=3)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/playlists/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "playlists",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Usuário Gabriel Aguiar (id=3)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/usuarios/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "usuarios",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Música Heavy (id=5)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/musicas/5",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "musicas",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Álbum Meteora (id=6)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/albuns/6",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albuns",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Artista ABBA (id=4)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/artistas/4",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "artistas",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Remove entidades que não têm mais dependências necessárias nos testes. Segue ordem segura: avaliação → playlist → usuário → música → álbum → artista."
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
